@@ -1,0 +1,79 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-auto-md">
+<div class="row">
+    <div class="col-sm-3">
+      <img src="../assets/2.png"  style="width:1300px;height:250px;">
+    </div>
+</div>
+<div class="row">
+  <div class="bottomheight">
+    <div class="col-md-3">
+      <input type="file" #fileImportInput name="File Upload" id="txtFileUpload" class="btn btn-primary" (change)="fileUploadListener($event)"
+        accept=".csv,.xml" />
+    </div>
+    <div class="col-md-3">
+      <input type="button" name="Reset" id="txtFileReset" class="btn btn-primary contentData" (click)="fileReset()" value="Reset"
+      />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="bottomheight">
+    <div class="col-md-6 " *ngIf="isRecordsAvailable">
+      <div class="panel panel-default boxShadow" style="margin-right: 23px;">
+        <div class="panel-heading">
+          <div class="panel-title">Records</div>
+          <div class="pull-right">
+            <button type="button" class="btn  btn-primary" style="margin-top: -45px;" (click)="findfailedRecords()">Generate Report</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <tbody>
+                <ng-container *ngFor="let csvRec of csvRecords;let i=index">
+                  <tr>
+                    <ng-container *ngFor="let data of csvRec;let j=index">
+                      <td>{{data}}</td>
+                    </ng-container>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- END widget-->
+    </div>
+    <div class="col-md-6 " *ngIf="isFailedRecords">
+      <!-- START widget-->
+      <div class="panel panel-default  boxShadow leftMargin">
+        <div class="panel-heading">
+          <div class="panel-title">Failed transactions</div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <tbody>
+                <tr *ngFor="let csvRec of failedRecords;let i=index">
+                  <td *ngFor="let data of csvRec;let j=index" color="red">{{data}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- END widget-->
+    </div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

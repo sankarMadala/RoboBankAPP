@@ -1,0 +1,53 @@
+@media only screen and (min-width: 768px)
+.content-heading {
+    margin: -20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.boxShadow{
+    box-shadow: 0 7px 9px rgba(0, 0, 0, .05) !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: blue;
+  border-color: white;
+  padding:8px;
+}
+.content-heading {
+    font-size: 24px;
+    line-height: 1.1;
+    color: #929292;
+    margin: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-weight: normal;
+    background-color: #fafbfc;
+    border-bottom: 1px solid #cfdbe2;
+}
+.bottomheight{
+    margin-bottom: 62px;
+    margin-left: 12px;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+    text-align: center;
+
+}
+.leftMargin{
+    margin-right:12px !important
+}
+@media (min-width:768px) and (max-width:769px) {
+    /* my css */
+    .contentData{
+        margin-top: 45px;
+    }
+}
+
+
+
