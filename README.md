@@ -82,8 +82,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 </div>
 </div>
 
-## Live demo
-https://robobank-processor.herokuapp.com
+
 
 ## Development server
 
